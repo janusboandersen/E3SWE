@@ -11,7 +11,17 @@ def encode(msg):
     Returns an encoded sequence from contents in msg
     """
 
-    res = []        # Store results in dict
+    #Corner cases:
+    if msg == '':
+        return ''   # the empty string yields an empty string
+
+    if not isinstance(msg, str):
+        return ''   # What to do on non-strings (isinstance also allows for subclasses)
+
+    if msg == None:
+        return ''   # If None (void) is passed in
+
+    res = []        # Store RLE results in dict
     old = msg[0]    # Begin with the first char in the message
     i = 0
     for c in msg:
@@ -21,13 +31,13 @@ def encode(msg):
         else:
             # A different char
             # Store results up to now
-            res.append('%d%c' % (i, old))
+            res.append(f'{i}{old}')
 
             # Prepare for next round
             old = c
             i = 1
 
-    res.append('%d%c' % (i, old))
+    res.append(f'{i}{old}')
 
     # Return the concatenation of all observed run lengths
     return ''.join(res)
