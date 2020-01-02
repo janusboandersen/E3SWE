@@ -10,6 +10,7 @@ pytest = "*"
 coverage = "*"
 hypothesis = "*"
 Fuzzy = "*"
+pytest-cov = "*"
 
 [requires]
 python_version = "3.7"

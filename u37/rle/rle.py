@@ -2,9 +2,7 @@
 A simple run-length encoder used for testing the test software
 https://en.wikipedia.org/wiki/Run-length_encoding
 """
-import os
-
-print(os.getcwd())
+import re
 
 def encode(msg):
     """
@@ -41,3 +39,29 @@ def encode(msg):
 
     # Return the concatenation of all observed run lengths
     return ''.join(res)
+
+def decode(seq):
+    """
+    Decodes a Run-length encoded sequence such as '2k3b' into 'kkbbb'
+    """
+
+    # Handle some corner cases
+    if (not seq) or (not isinstance(seq, str)):
+        return ''   # Return empty string on non-strings and all non-true values (empty string, None, 0, ...)
+
+    # Use regex to match patters, t is a list of tuples (if any found)
+    # '2k3b' -> [('2','k'), ('3','b')]   ...notice that integers are still string-formatted
+    t = re.findall(r'(\d)(\D)', seq)
+
+    # Return if empty
+    if not t:
+        return ''
+
+    # Use a list comprehension to work on the tuples... Convert integers to int
+    # [('2','k'), ('3','b')] -> ['k'*2 , 'b'*3] -> ['kk', 'bbb']
+    msg = [c*int(i) for i,c in t]
+
+    # Concatenate without separators, msg is now a string
+    msg = ''.join(msg)
+
+    return msg
