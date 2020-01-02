@@ -51,7 +51,7 @@ def decode(seq):
     if (not seq) or (not isinstance(seq, str)):
         return ''   # Return empty string on non-strings and all non-true values (empty string, None, 0, ...)
 
-    # Use regex to match patters, t is a list of tuples (if any found)
+    # Use regex to match patterns, t is then a list of tuples (if any patterns found)
     # '2k3b' -> [('2','k'), ('3','b')]   ...notice that integers are still string-formatted
     t = re.findall(r'(\d)(\D)', seq)
 
