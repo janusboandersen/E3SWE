@@ -2,9 +2,14 @@
 Various for E3SWE at AU Engineering.
 
 ## Course
-Course in Software Engineering Principles. 
-Focuses on using Python and other tools for engineering projects.
+Course in Software Engineering, covering key methods and principles. 
+Focuses on using Python and various cloud-based tools for engineering projects, also with focus on databases.
 
-## Requirements
-* Run Python virtual environment with Python 3.7 and site packages
-* Install additional packages: pytest, coverage, hypothesis, fuzzy (pip3 install -r requirements.txt)
+## Week 36: Python intro
+* Light intro to Python -> install Python 3.7 or later.
+
+## Week 37: Automatic tests and test coverage
+* Uses additional packages: pytest, coverage, hypothesis, fuzzy (use Pipenv, or do `pip3 install -r requirements.txt`)
+
+## Week 38: Fuzzing and intelligent fuzzing (hypothesis)
+* ...
