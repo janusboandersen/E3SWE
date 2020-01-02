@@ -1,6 +1,8 @@
 """
 A simple run-length encoder used for testing the test software
 https://en.wikipedia.org/wiki/Run-length_encoding
+
+Janus Bo Andersen, 2019
 """
 import re
 

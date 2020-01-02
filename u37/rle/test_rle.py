@@ -2,6 +2,7 @@
 A simple run-length encoder used for testing the test software
 https://en.wikipedia.org/wiki/Run-length_encoding
 
+Janus Bo Andersen, 2019
 """
 
 # This import uses rle.rle.encode (as PyCharm expects), by way of the __init__.py file, which
