@@ -1,7 +1,7 @@
 pytest
 pytest-cov
 hypothesis
-fuzzy
+fuzzing
 coverage
 
 
