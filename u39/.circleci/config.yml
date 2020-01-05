@@ -1,0 +1,30 @@
+# Python CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-python/ for more details
+#
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/python:3.7
+
+      # Specify service dependencies here if necessary
+      # CircleCI maintains a library of pre-built images
+      # documented at https://circleci.com/docs/2.0/circleci-images/
+
+    working_directory: ~/repo/u39
+
+    steps:
+      - checkout
+      - run:
+          - name: Install dependencies
+          - command: |
+              python3 -m venv venv
+              . venv/bin/activate
+              pip install -r requirements.txt
+
+      - run:
+          - name: Run tests
+          - command: |
+              . venv/bin/activate
+              pytest
